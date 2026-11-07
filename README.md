@@ -35,6 +35,20 @@ Plasma to load the new version:
 systemctl --user restart plasma-plasmashell
 ```
 
+## Packages
+
+Instead of `install.sh`, you can build a package of the newest state of
+`main`:
+
+- Fedora: [`packaging/fedora/pla8ma-show-desktop.spec`](packaging/fedora/pla8ma-show-desktop.spec),
+  the steps are at the top of the file.
+- Arch Linux: [`packaging/arch/PKGBUILD`](packaging/arch/PKGBUILD), run
+  `makepkg -si` in its folder.
+
+The package installs the widget for all users. Remove a copy installed
+with `install.sh` first (`./uninstall.sh`), otherwise Plasma keeps using
+that one.
+
 ## Uninstall
 
 Remove the widget from the panel first, then:

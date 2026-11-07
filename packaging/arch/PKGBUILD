@@ -1,0 +1,36 @@
+# Builds the newest state of the main branch:
+#   makepkg -si
+
+pkgname=pla8ma-show-desktop-git
+_repo=pla8ma-show-desktop
+_applet=io.github.pla8ma.showdesktop
+pkgver=1.0.r0
+pkgrel=1
+pkgdesc='Pla8ma show desktop widget for KDE Plasma'
+arch=('any')
+url="https://github.com/pla8ma/$_repo"
+license=('GPL-2.0-or-later')
+depends=('plasma-workspace>=6.0' 'libplasma' 'kwindowsystem' 'kirigami' 'kcmutils')
+makedepends=('git' 'gettext')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd "$_repo"
+    printf '1.0.r%s.%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+build() {
+    cd "$_repo"
+    msgfmt po/de.po -o "plasma_applet_$_applet.mo"
+}
+
+package() {
+    cd "$_repo"
+    install -d "$pkgdir/usr/share/plasma/plasmoids/$_applet"
+    cp -a plasmoid/. "$pkgdir/usr/share/plasma/plasmoids/$_applet/"
+    install -Dm644 "plasma_applet_$_applet.mo" -t "$pkgdir/usr/share/locale/de/LC_MESSAGES/"
+    install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}
