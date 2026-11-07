@@ -1,5 +1,6 @@
 {
     "KPlugin": {
+        "BugReportUrl": "https://github.com/pla8ma/pla8ma-show-desktop/issues",
         "Category": "Windows and Tasks",
         "Description": "Narrow show desktop strip at the end of the taskbar",
         "Description[de]": "Schmaler „Desktop anzeigen“-Streifen am Ende der Taskleiste",
@@ -8,7 +9,8 @@
         "License": "GPL-2.0-or-later",
         "Name": "Pla8ma Show Desktop",
         "Name[de]": "Pla8ma Desktop anzeigen",
-        "Version": "1.0"
+        "Version": "1.0",
+        "Website": "https://github.com/pla8ma/pla8ma-show-desktop"
     },
     "KPackageStructure": "Plasma/Applet",
     "X-Plasma-API-Minimum-Version": "6.0",
