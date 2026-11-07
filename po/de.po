@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_io.github.pla8ma.showdesktop\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid "General"
+msgstr "Allgemein"
+
+msgid "Peek:"
+msgstr "Vorschau:"
+
+msgid "Preview the desktop when the pointer rests on the button"
+msgstr "Desktop in der Vorschau zeigen, wenn der Mauszeiger auf der Schaltfläche ruht"
+
+msgid "Show desktop"
+msgstr "Desktop anzeigen"
